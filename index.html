@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<button onclick="getLocation()">Get Location</button>
+
+<script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    console.log("LON: ", longitude, "\nLAT: ", latitude);
+    // var url = "https://www.google.com/maps?q=" + latitude + "," + longitude;
+    // window.location.href = url;
+  }
+</script>
+
+</html>
